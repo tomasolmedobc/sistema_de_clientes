@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" href="resources/css/style.css">
+</head>
+<body>
+
+<div class="container register-form">
+    <h1>Editar Usuario</h1>
+    <form action="/edit/<%= user.id_users %>" method="POST">
+        <input type="hidden" name="_method" value="PUT"> <!-- Método PUT para la actualización -->
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" value="<%= user.name %>" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" value="<%= user.email %>" required>
+
+        <label for="rol">Rol:</label>
+        <select name="rol" id="rol" class="select-css">
+            <option value="estudiante" <% if (user.rol === 'estudiante') { %>selected<% } %>>Estudiante</option>
+            <option value="profesor" <% if (user.rol === 'profesor') { %>selected<% } %>>Profesor</option>
+        </select>
+
+        <button type="submit">Guardar Cambios</button>
+    </form>
+</div>
+
+</body>
+</html>
