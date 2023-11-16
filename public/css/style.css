@@ -15,8 +15,8 @@ body{
     border-color: rgb(40,44,52);
   }
   .v1header h2{
-    margin: auto;
     padding: 20px 0 20px 0;
+    margin: 0px 0px 20px 0px;
   }
   .v1header{
   background-color: #38444d;
@@ -29,10 +29,10 @@ body{
   }
 .containerv1{
   background-color: #38444d; 
-  width: 50vh;
+  width: 100vh;
   margin: 0 auto;
   padding:5px 0 5px 0;
-  margin-top: 35px;
+  margin-top: 0px;
   font-family: roboto;
   text-align: left !important;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
@@ -52,12 +52,12 @@ body{
     text-align: center;
     color:#f1f1f1 ;
     font-size: 28px;
-    padding: 70px 0 10px 0;
+    padding: 10px 0 10px 0;
   }
   .login-form input[type="password"],
   .login-form input[type="text"] {
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     border: 1px solid #ced4da;
     margin-bottom: 10px;
     box-sizing:border-box;
@@ -149,6 +149,10 @@ body{
     color: white;
   }
   
+  /*botones de cancela y crear  */
+  .button-sub-cancel{
+    text-align: center;
+  }
   /* Estilos boton CANCELAR*/
   .btn-cancel{
     width: 50%;
@@ -215,6 +219,15 @@ body{
   text-align: left !important;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
+.edit-form{
+  width: 50vh;
+  padding: 10px 10px 10px 10px;
+  background-color: #38444d;
+  font-family: roboto;
+  text-align: left !important;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
 .register-form h1 {
     text-align: left;
     color: #f1f1f1;
@@ -272,14 +285,22 @@ body{
     white-space: normal;
 }
 .navbar .a-login{
-  width: 50px;
+  width: 100px;
   border-radius: 25px;
   margin-right: 20px;
   position: relative;
   z-index: 5;
   white-space: normal;
 }
-.navbar{
+.navbar-2 .a-logout{
+  width: 100px;
+  border-radius: 25px;
+  margin-right: 20px;
+  position: relative;
+  z-index: 5;
+  white-space: normal;
+}
+.navbar, .navbar-2{
     color: #F1F1F1;
     text-align: right;
     padding: 8px 16px;
@@ -288,7 +309,7 @@ body{
     display: block;
     outline: 0;
 }
-.navbar a{
+.navbar a, .navbar-2 a{
   color: #F1F1F1;
 }
 

@@ -3,17 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<title>Tabla clientes</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <!-- BoxIcons -->
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 <link rel="stylesheet" href="resources/css/style.css">
+<script type="module" src="/resources/js/busqueda.js"></script>
 </head>
 <body>
-
-<!-- ... (tu código previo) -->
+    <div class="navbar-2">
+        <% if (login) { %>
+        <a class="active" href="/"><i class="fa fa-fw fa-home"></i>Inicio</a>
+        <a href="tabla"><i class="fa fa-fw fa-search"></i> Tabla de usuarios</a>
+        </i>Bienvenido<strong> <%= name %></strong>!
+        <a href="logout" class="a-logout">Logout</a>
+            <% } else { %>
+                <a href="login" class="a-login"><i></i> Login</a>
+            <% } %>
+    </div>
 
         <h1>Tabla de clientes</h1>
+        <div class="container">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" id="busqueda" placeholder="Buscar cliente" data-table="table" aria-label="Buscar cliente">
+            </form>
+            <a href="/create" class="btn btn-primary">Agregar cliente</a>
+            </div>
         <div class="container">
             <table data-table="table" class="table table-bordered border-dark">
             <thead>
@@ -36,13 +52,12 @@
                             <td><%= user.tel %></td>
                             <td><%= user.direccion %></td>
                             <td>
-                                <button type="submit" class="btn btn-info" name="editar">Editar</button>
-                                <button type="submit" class="btn btn-danger" name="eliminar">Eliminar</button>
-                                <a href="/edit/<%= users.id_cliente %>" class="btn btn-outline-info mt-4 icon-cus">editar</a>
-                                <a href="/delete/<%= users.id_cliente  %>" class="btn btn-outline-danger mt-4 icon-cus">eliminar</a>
+                                <a href="/edit/<%= user.id_cliente %>" class="btn btn-outline-info mt-4 icon-cus">editar</a>
+                                <a href="/delete/<%= user.id_cliente %>" class="btn btn-outline-danger mt-4 icon-cus">eliminar</a>
                             </td>
                         </tr>
                     <% }); %>
+                    
                 </tbody>
         </table>
         <% } else { %>
