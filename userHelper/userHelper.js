@@ -1,4 +1,4 @@
-const { pool } = require('../config/db'); // Asegúrate de proporcionar la ruta correcta
+const { pool } = require('../config/db');
 
 // Obtener usuario por nombre de usuario
 const getUserByUsername = async (username) => {

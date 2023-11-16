@@ -5,7 +5,6 @@ const dotenv = require('dotenv');
 const bcryptjs = require('bcryptjs');
 const { pool } = require('./config/db');
 const { promisify } = require('util');
-// app.js
 const { getUserByUsername, getUserById, updateUser } = require('./userHelper/userHelper');
 
 
@@ -118,7 +117,6 @@ app.post('/register', async (req, res) => {
         const pass = req.body.pass;
         let passwordHash = await bcryptjs.hash(pass, 8);
 
-        // Cambia la consulta para utilizar el pool y manejar la conexión de manera asíncrona
         const [results, _] = await pool.query('INSERT INTO users (username, name, email, password) VALUES (?, ?, ?, ?)',
             [username, name, email, passwordHash]);
 
